@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\FastAndFurious\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56F9C925-C34D-A9F2-25B2-18566E84B729}|Assembly-CSharp.csproj|c:\\fastandfurious\\assets\\starterassets\\thirdpersoncontroller\\scripts\\jordy\\footstepaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F9C925-C34D-A9F2-25B2-18566E84B729}|Assembly-CSharp.csproj|solutionrelative:assets\\starterassets\\thirdpersoncontroller\\scripts\\jordy\\footstepaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F9C925-C34D-A9F2-25B2-18566E84B729}|Assembly-CSharp.csproj|c:\\fastandfurious\\assets\\starterassets\\thirdpersoncontroller\\scripts\\jordy\\doublejump.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F9C925-C34D-A9F2-25B2-18566E84B729}|Assembly-CSharp.csproj|solutionrelative:assets\\starterassets\\thirdpersoncontroller\\scripts\\jordy\\doublejump.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FootstepAudio.cs",
+              "DocumentMoniker": "C:\\FastAndFurious\\Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\FootstepAudio.cs",
+              "RelativeDocumentMoniker": "Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\FootstepAudio.cs",
+              "ToolTip": "C:\\FastAndFurious\\Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\FootstepAudio.cs",
+              "RelativeToolTip": "Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\FootstepAudio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T18:12:21.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DoubleJump.cs",
+              "DocumentMoniker": "C:\\FastAndFurious\\Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\DoubleJump.cs",
+              "RelativeDocumentMoniker": "Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\DoubleJump.cs",
+              "ToolTip": "C:\\FastAndFurious\\Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\DoubleJump.cs",
+              "RelativeToolTip": "Assets\\StarterAssets\\ThirdPersonController\\Scripts\\Jordy\\DoubleJump.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T18:03:18.699Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
