@@ -1,6 +1,6 @@
 using UnityEngine;
 using StarterAssets;
-public class FootstepAudio : MonoBehaviour
+public class FootstepAudio_Jordy : MonoBehaviour
 {
     public AudioClip[] footstepClips; // Assign in Inspector
     public float stepInterval = 0.5f; // Time between steps

@@ -1,7 +1,7 @@
 using UnityEngine;
 using StarterAssets;
 using System.Reflection;
-public class DoubleJump : MonoBehaviour
+public class DoubleJump_Jordy : MonoBehaviour
 {
     public int maxJumpCount = 2;
     public float jumpForce = 10f;
