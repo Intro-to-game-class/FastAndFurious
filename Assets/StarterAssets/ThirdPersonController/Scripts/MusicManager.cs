@@ -4,15 +4,11 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
-    [SerializeField] private AudioSource audioSource;
-
-    [Header("Music Clips")]
-    public AudioClip menuMusic;
-    public AudioClip gameplayMusic;
+    private AudioSource audioSource;
 
     private void Awake()
     {
-        // Singleton pattern to keep only one music manager
+        // Singleton pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -21,31 +17,15 @@ public class MusicManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Ensure we have an AudioSource configured
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.loop = true;
-            audioSource.playOnAwake = false;
-            audioSource.spatialBlend = 0f; // 2D
-        }
-    }
-
-    public void PlayMusic(AudioClip clip, float volume = 1f)
-    {
-        if (clip == null) return;
-        audioSource.clip = clip;
-        audioSource.volume = volume;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true;
         audioSource.Play();
     }
 
-    public void StopMusic()
+    public void ChangeMusic(AudioClip newClip)
     {
-        audioSource.Stop();
-    }
-
-    public void SetVolume(float volume)
-    {
-        audioSource.volume = Mathf.Clamp01(volume);
+        if (audioSource.clip == newClip) return;
+        audioSource.clip = newClip;
+        audioSource.Play();
     }
 }
