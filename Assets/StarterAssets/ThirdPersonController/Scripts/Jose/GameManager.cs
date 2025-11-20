@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public TMP_Text scoreText;
+    public GameObject winMessage; // Drag your message UI here
     private int score = 0;
 
     private void Awake()
@@ -17,5 +18,10 @@ public class GameManager : MonoBehaviour
     {
         score += amount;
         scoreText.text = "Score: " + score;
+
+        if (score >= 10) // Check if player collected 10 items
+        {
+            winMessage.SetActive(true); // Show the message
+        }
     }
-} // <-- Make sure this is here to close the class
+}
