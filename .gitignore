@@ -5,6 +5,7 @@ Build
 Builds
 Logs
 UserSettings
+*.vs
 
 Thumbs.db
 
