@@ -1,25 +1,50 @@
+
 using UnityEngine;
 
-public class PacmanEnemyRigidbody : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
-    public float moveSpeed = 3f;                // Movement speed
-    public float directionChangeInterval = 2f;  // Time between random direction changes
+    [Header("Movement")]
+    [Tooltip("Units per second.")]
+    public float moveSpeed = 3f;
+
+    [Tooltip("Seconds between random cardinal direction changes.")]
+    public float directionChangeInterval = 2f;
+
+    [Header("Turning")]
+    [Tooltip("Higher = snappier rotation.")]
+    public float turnSpeed = 8f;
+
+    [Tooltip("Yaw-only (keeps the enemy level on X/Z plane).")]
+    public bool keepLevel = true;
+
+    [Tooltip("Use (0, 180, 0) if your mesh faces the wrong way; (0, 90, 0) if your mesh faces +X.")]
+    public Vector3 modelForwardOffset = Vector3.zero;
+
+    [Tooltip("Optional: rotate a visual child instead of the root (recommended if root holds colliders).")]
+    public Transform visual; // assign your mesh child if you have one
 
     private Rigidbody rb;
-    private Vector3 moveDirection;
+    private Vector3 moveDirection; // current cardinal direction
     private float directionTimer;
+
+    // ----------------- Lifecycle -----------------
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        // Prevent tipping (freeze X/Z rotation) but allow yaw (Y) so we can face movement
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation; // Prevent tipping over
         PickRandomDirection();
         directionTimer = directionChangeInterval;
     }
 
     void FixedUpdate()
     {
-        // Countdown until next direction change
+        // Change direction on interval
         directionTimer -= Time.fixedDeltaTime;
         if (directionTimer <= 0f)
         {
@@ -27,14 +52,25 @@ public class PacmanEnemyRigidbody : MonoBehaviour
             directionTimer = directionChangeInterval;
         }
 
-        // Move the cube using physics
+        // Move using physics
         Vector3 newPosition = rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(newPosition);
+
+        // Face the movement direction (smooth yaw)
+        FaceMovementDirection(moveDirection);
     }
 
-    void PickRandomDirection()
+    void OnCollisionEnter(Collision collision)
     {
-        // Choose a random cardinal direction (X/Z plane)
+        // Hit a wall? Pick a new direction
+        if (collision.gameObject.CompareTag("Wall"))
+            PickRandomDirection();
+    }
+
+    // ----------------- Behavior -----------------
+
+    private void PickRandomDirection()
+    {
         int rand = Random.Range(0, 4);
         switch (rand)
         {
@@ -45,12 +81,25 @@ public class PacmanEnemyRigidbody : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void FaceMovementDirection(Vector3 dir)
     {
-        // If the cube hits a wall, pick a new direction
-        if (collision.gameObject.CompareTag("Wall"))
+        if (dir.sqrMagnitude < 0.0001f) return;
+
+        if (keepLevel)
         {
-            PickRandomDirection();
+            dir.y = 0f;
+            if (dir.sqrMagnitude < 0.0001f) return;
+            dir.Normalize();
         }
+
+        Quaternion targetRot = Quaternion.LookRotation(dir, Vector3.up);
+
+        // Optional forward-axis correction (e.g., if mesh faces +X, use (0, 90, 0); if backwards, (0, 180, 0))
+        if (modelForwardOffset != Vector3.zero)
+            targetRot *= Quaternion.Euler(modelForwardOffset);
+
+        // Rotate the visual child if assigned, else the root
+        Transform t = (visual != null) ? visual : transform;
+        t.rotation = Quaternion.Slerp(t.rotation, targetRot, turnSpeed * Time.deltaTime);
     }
 }
