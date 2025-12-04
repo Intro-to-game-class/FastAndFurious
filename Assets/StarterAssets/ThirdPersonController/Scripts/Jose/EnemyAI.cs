@@ -22,9 +22,15 @@ public class EnemyAI : MonoBehaviour
     [Tooltip("Optional: rotate a visual child instead of the root (recommended if root holds colliders).")]
     public Transform visual;
 
+    [Header("Effects")]
+    [Tooltip("Drop ANY prefab here to spawn when this enemy is destroyed.")]
+    public GameObject effectOnDestroy;
+
     private Rigidbody rb;
     private Vector3 moveDirection;
     private float directionTimer;
+
+    // ----------------- Lifecycle -----------------
 
     void Awake()
     {
@@ -57,6 +63,16 @@ public class EnemyAI : MonoBehaviour
             PickNewDirectionOnCollision();
     }
 
+    // ----------------- Destroy Effect -----------------
+
+    void OnDestroy()
+    {
+        if (effectOnDestroy != null)
+        {
+            Instantiate(effectOnDestroy, transform.position, Quaternion.identity);
+        }
+    }
+
     // ----------------- Behavior -----------------
 
     private void PickRandomDirection()
@@ -69,7 +85,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 oldDir = moveDirection;
         Vector3 newDir = oldDir;
 
-        // Ensure new direction is different
+        // Ensure the new direction is different
         while (newDir == oldDir)
             newDir = GetRandomCardinalDirection();
 

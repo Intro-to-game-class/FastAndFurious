@@ -346,6 +346,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 0, z: 0}
   visual: {fileID: 0}
+  effectOnDestroy: {fileID: 0}
 --- !u!54 &96031073
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1953,6 +1954,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 0, z: 0}
   visual: {fileID: 0}
+  effectOnDestroy: {fileID: 0}
 --- !u!54 &557065787
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4794,6 +4796,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 0, z: 0}
   visual: {fileID: 0}
+  effectOnDestroy: {fileID: 0}
 --- !u!54 &1198419887
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5843,6 +5846,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 0, z: 0}
   visual: {fileID: 0}
+  effectOnDestroy: {fileID: 0}
 --- !u!54 &1571154044
 Rigidbody:
   m_ObjectHideFlags: 0
