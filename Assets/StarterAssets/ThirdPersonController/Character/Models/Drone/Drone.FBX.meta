@@ -90,7 +90,157 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Drone(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: droid
+      parentName: Drone(Clone)
+      position: {x: -0, y: 0, z: 0.0000000011182056}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: Drone(Clone)
+      position: {x: -0.000000014135596, y: 1.2072493, z: -0.11813237}
+      rotation: {x: 0.69149166, y: -0.042989444, z: 0.7210836, w: -0.0054475544}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fire
+      parentName: Body
+      position: {x: -0.00000005572998, y: 0.6509909, z: -0.000000039318902}
+      rotation: {x: 0.7071068, y: -0.00000018453662, z: 0.70710677, w: 0.00000018453662}
+      scale: {x: 0.7983156, y: 0.77647233, z: 0.79831547}
+    - name: Cone1
+      parentName: Fire
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cone2
+      parentName: Fire
+      position: {x: -0.000000042068905, y: -0.49565485, z: 0.000000046503658}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 0.5347614, y: 1, z: 0.5347614}
+    - name: Cone3
+      parentName: Fire
+      position: {x: -0.000000042068905, y: -0.56789577, z: 0.000000055115446}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 0.44860613, y: 1, z: 0.44860613}
+    - name: Cone4
+      parentName: Fire
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ConeBleu
+      parentName: Fire
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1.0453885, y: 1, z: 1.0453885}
+    - name: FireBis
+      parentName: Body
+      position: {x: -0.000000095143676, y: 0.6138448, z: -0.000000037917978}
+      rotation: {x: -0.5735763, y: 0.00000028290032, z: 0.8191522, w: 0.00000036995993}
+      scale: {x: 0.4437315, y: 0.77647233, z: 0.44373128}
+    - name: ConeBleu001
+      parentName: FireBis
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1.0453885, y: 1, z: 1.0453885}
+    - name: Cone005
+      parentName: FireBis
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cone006
+      parentName: FireBis
+      position: {x: -0.000000042068905, y: -0.56789577, z: 0.000000055115446}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 0.44860613, y: 1, z: 0.44860613}
+    - name: Cone007
+      parentName: FireBis
+      position: {x: -0.000000042068905, y: -0.49565485, z: 0.000000046503658}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 0.5347614, y: 1, z: 0.5347614}
+    - name: Cone008
+      parentName: FireBis
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FireTert
+      parentName: Body
+      position: {x: -0.000000095143676, y: 0.6138448, z: -0.000000037917978}
+      rotation: {x: -0.087155655, y: 0.000000096982625, z: 0.9961947, w: 0.0000010194282}
+      scale: {x: 0.1749834, y: 0.83575034, z: 0.1749833}
+    - name: ConeBleu002
+      parentName: FireTert
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1.0453885, y: 1, z: 1.0453885}
+    - name: Cone009
+      parentName: FireTert
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cone010
+      parentName: FireTert
+      position: {x: -0.000000042068905, y: -0.49565485, z: 0.000000046503658}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 0.5347614, y: 1, z: 0.5347614}
+    - name: Cone011
+      parentName: FireTert
+      position: {x: -0.000000042068905, y: -0.56789577, z: 0.000000055115446}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 0.44860613, y: 1, z: 0.44860613}
+    - name: Cone012
+      parentName: FireTert
+      position: {x: -0.000000042068905, y: -0.105553895, z: 0}
+      rotation: {x: -1.6658097e-21, y: 0.7071067, z: 1.6658093e-21, w: 0.7071069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Flap2
+      parentName: Body
+      position: {x: -0.23307422, y: 0.26925653, z: -0.4036965}
+      rotation: {x: 0.7020758, y: -0.65011495, z: -0.08420046, w: 0.27811947}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Flap1
+      parentName: Body
+      position: {x: -0.23307422, y: 0.2692564, z: 0.4036962}
+      rotation: {x: -0.31245422, y: 0.3903484, z: -0.5411872, w: 0.6761042}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ArmL1
+      parentName: Body
+      position: {x: -0.000000038146972, y: 0.014055441, z: 0.5916444}
+      rotation: {x: -0.40221083, y: 0.58673483, z: -0.41239694, w: 0.5691198}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ArmL2
+      parentName: ArmL1
+      position: {x: -0.52545834, y: 0.0000001987901, z: 0.000000076293944}
+      rotation: {x: -7.3003454e-17, y: -4.6575705e-17, z: -0.21579893, w: 0.97643787}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PinceR
+      parentName: ArmL2
+      position: {x: -0.5484883, y: -0.07521539, z: 0.0000004196167}
+      rotation: {x: 0.0060636597, y: -0.013048542, z: 0.089533485, w: 0.99587995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Flap3
+      parentName: Body
+      position: {x: 0.46614832, y: 0.26925644, z: -0.00000019073485}
+      rotation: {x: 0.49999934, y: -0.49999934, z: -0.50000066, w: 0.50000066}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ArmR1
+      parentName: Body
+      position: {x: 0.000000038146972, y: 0.0140555175, z: -0.5916443}
+      rotation: {x: 0.54472625, y: -0.44481823, z: 0.5644141, w: -0.4322579}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ArmR2
+      parentName: ArmR1
+      position: {x: -0.5254583, y: -0.0000001397729, z: 0.000000044293955}
+      rotation: {x: 6.517664e-24, y: 1.14483e-24, z: 0.17300181, w: 0.9849215}
+      scale: {x: 1, y: 1, z: 1}
+    - name: PinceL
+      parentName: ArmR2
+      position: {x: -0.54848844, y: 0.07521468, z: 0.000000038146972}
+      rotation: {x: -0.0056276843, y: -0.0155245075, z: -0.10101348, w: 0.99474806}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -101,13 +251,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
