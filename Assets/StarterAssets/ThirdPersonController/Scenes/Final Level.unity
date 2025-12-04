@@ -3707,6 +3707,10 @@ PrefabInstance:
       value: PlayerArmature
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: JumpAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dc08dc069274ac74283f635110272e55, type: 3}
+    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 1
       objectReference: {fileID: 0}
@@ -3781,6 +3785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4349f556c32a542b16241410d5b54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doubleJumpSound: {fileID: 8300000, guid: b742f02dff434a646a3bd36b6c33979e, type: 3}
   maxJumpCount: 1
   jumpForce: 5
 --- !u!114 &1762682268
