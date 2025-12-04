@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -21,18 +20,15 @@ public class EnemyAI : MonoBehaviour
     public Vector3 modelForwardOffset = Vector3.zero;
 
     [Tooltip("Optional: rotate a visual child instead of the root (recommended if root holds colliders).")]
-    public Transform visual; // assign your mesh child if you have one
+    public Transform visual;
 
     private Rigidbody rb;
-    private Vector3 moveDirection; // current cardinal direction
+    private Vector3 moveDirection;
     private float directionTimer;
-
-    // ----------------- Lifecycle -----------------
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        // Prevent tipping (freeze X/Z rotation) but allow yaw (Y) so we can face movement
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
@@ -44,7 +40,6 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Change direction on interval
         directionTimer -= Time.fixedDeltaTime;
         if (directionTimer <= 0f)
         {
@@ -52,33 +47,46 @@ public class EnemyAI : MonoBehaviour
             directionTimer = directionChangeInterval;
         }
 
-        // Move using physics
-        Vector3 newPosition = rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
-        rb.MovePosition(newPosition);
-
-        // Face the movement direction (smooth yaw)
+        rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
         FaceMovementDirection(moveDirection);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Hit a wall? Pick a new direction
         if (collision.gameObject.CompareTag("Wall"))
-            PickRandomDirection();
+            PickNewDirectionOnCollision();
     }
 
     // ----------------- Behavior -----------------
 
     private void PickRandomDirection()
     {
+        moveDirection = GetRandomCardinalDirection();
+    }
+
+    private void PickNewDirectionOnCollision()
+    {
+        Vector3 oldDir = moveDirection;
+        Vector3 newDir = oldDir;
+
+        // Ensure new direction is different
+        while (newDir == oldDir)
+            newDir = GetRandomCardinalDirection();
+
+        moveDirection = newDir;
+    }
+
+    private Vector3 GetRandomCardinalDirection()
+    {
         int rand = Random.Range(0, 4);
         switch (rand)
         {
-            case 0: moveDirection = Vector3.forward; break;
-            case 1: moveDirection = Vector3.back; break;
-            case 2: moveDirection = Vector3.left; break;
-            case 3: moveDirection = Vector3.right; break;
+            case 0: return Vector3.forward;
+            case 1: return Vector3.back;
+            case 2: return Vector3.left;
+            case 3: return Vector3.right;
         }
+        return Vector3.forward;
     }
 
     private void FaceMovementDirection(Vector3 dir)
@@ -94,11 +102,9 @@ public class EnemyAI : MonoBehaviour
 
         Quaternion targetRot = Quaternion.LookRotation(dir, Vector3.up);
 
-        // Optional forward-axis correction (e.g., if mesh faces +X, use (0, 90, 0); if backwards, (0, 180, 0))
         if (modelForwardOffset != Vector3.zero)
             targetRot *= Quaternion.Euler(modelForwardOffset);
 
-        // Rotate the visual child if assigned, else the root
         Transform t = (visual != null) ? visual : transform;
         t.rotation = Quaternion.Slerp(t.rotation, targetRot, turnSpeed * Time.deltaTime);
     }
