@@ -346,7 +346,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 180, z: 0}
   visual: {fileID: 0}
-  effectOnDestroy: {fileID: 0}
+  effectOnDestroy: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
 --- !u!54 &96031073
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1962,7 +1962,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 180, z: 0}
   visual: {fileID: 0}
-  effectOnDestroy: {fileID: 0}
+  effectOnDestroy: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
 --- !u!54 &557065787
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4812,7 +4812,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 180, z: 0}
   visual: {fileID: 0}
-  effectOnDestroy: {fileID: 0}
+  effectOnDestroy: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
 --- !u!54 &1198419887
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5862,7 +5862,7 @@ MonoBehaviour:
   keepLevel: 1
   modelForwardOffset: {x: 0, y: 180, z: 0}
   visual: {fileID: 0}
-  effectOnDestroy: {fileID: 0}
+  effectOnDestroy: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
 --- !u!54 &1571154044
 Rigidbody:
   m_ObjectHideFlags: 0
