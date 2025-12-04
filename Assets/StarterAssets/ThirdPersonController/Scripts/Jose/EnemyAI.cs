@@ -29,6 +29,7 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveDirection;
     private float directionTimer;
+    private bool isQuitting = false;
 
     // ----------------- Lifecycle -----------------
 
@@ -63,10 +64,15 @@ public class EnemyAI : MonoBehaviour
             PickNewDirectionOnCollision();
     }
 
-    // ----------------- Destroy Effect -----------------
+    void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
 
     void OnDestroy()
     {
+        if (isQuitting) return;
+
         if (effectOnDestroy != null)
         {
             Instantiate(effectOnDestroy, transform.position, Quaternion.identity);
@@ -85,7 +91,6 @@ public class EnemyAI : MonoBehaviour
         Vector3 oldDir = moveDirection;
         Vector3 newDir = oldDir;
 
-        // Ensure the new direction is different
         while (newDir == oldDir)
             newDir = GetRandomCardinalDirection();
 
