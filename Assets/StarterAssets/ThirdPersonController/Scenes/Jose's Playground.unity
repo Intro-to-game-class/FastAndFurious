@@ -6546,7 +6546,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0835841
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -6641,10 +6641,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.50423306
+  m_Height: 2.184529
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.7901565, z: 0}
 --- !u!114 &1762682276
 MonoBehaviour:
   m_ObjectHideFlags: 0
